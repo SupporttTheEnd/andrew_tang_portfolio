@@ -1,106 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Tang Resume</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>My Resume</h1>
-    </header>
-    <main>
-        <section id="resume">
-            <h2>Resume</h2>
-            <p><strong>Andrew Tang</strong></p>
-            <p>Email: <a href="mailto:andrew73@umbc.edu">andrew73@umbc.edu</a></p>
-            <p>Phone: (443) 851-9937</p>
-            <p>Location: Catonsville, MD, 21228</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/andrew-tang-107603270" target="_blank">www.linkedin.com/in/andrew-tang-107603270</a></p>
-            
-            <h3>Education</h3>
-            <p><strong>Catonsville High School (2018-2022)</strong><br>
-            Final Highschool GPA: 4.0</p>
-            <p><strong>University of Maryland Baltimore County (2022-Present)</strong><br>
-            Cumulative UMBC GPA: 4.0<br>
-            Expected Graduation: Spring 2025</p>
-            
-            <h3>UMBC Major</h3>
-            <p>Computer Science, B.S</p>
-            
-            <h3>UMBC Minor</h3>
-            <p>Mathematics</p>
-            
-            <h3>Experience</h3>
-            <p><strong>Lab Assistant (2023 September-Present)</strong><br>
-            University of Maryland Baltimore County; Baltimore County, MD<br>
-            - Created lab setups weekly for various physics experiments.<br>
-            - Collaborated with instructors to create clear and comprehensive procedures.<br>
-            - Maintained a neat and well-organized lab space.</p>
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
 
-            <p><strong>CMSC 202 Teaching Fellow (2024 January-Present)</strong><br>
-            University of Maryland Baltimore County; Baltimore County, MD<br>
-            - Conducted weekly office hours for CMSC 202 students, offering support for projects and exams.<br>
-            - Reviewed and graded projects and exams, providing detailed feedback.<br>
-            - Created lab assignments, edited project documents, and proctored exams.</p>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-            <p><strong>Web Development Intern (March 2024-May 2024)</strong><br>
-            Digi Solutions: Baltimore City, MD<br>
-            - Developed/maintained WordPress websites using HTML, CSS, and JavaScript.<br>
-            - Integrated third-party plugins and resolved website issues.<br>
-            - Created graphics and improved website loading speed by 30%.</p>
+header {
+    background-color: #4CAF50; /* Green background for header */
+    color: #fff; /* White text color */
+    padding: 1rem;
+    text-align: center;
+}
 
-            <p><strong>Maryland Science Center DIY Shed Staff (2024 May-Present)</strong><br>
-            Maryland Science Center; Baltimore City, MD<br>
-            - Led interactive workshops and sessions.<br>
-            - Assisted guests with hands-on projects.<br>
-            - Interacted with visitors, including school-age children.</p>
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
 
-            <h3>Relevant Coursework</h3>
-            <p><strong>Computer Science:</strong> Computer Architecture, Operating Systems, Algorithms, Data Structures, Assembly, Discrete Structures.</p>
-            <p><strong>Mathematics:</strong> Multivariable Calculus, Number Theory, Differential Equations, Probability and Statistics, Discrete Math</p>
-            
-            <h3>Known Programming/Scripting/Typesetting Languages</h3>
-            <p>C, C++, C#, Python, Prolog, Scheme, X86 Assembly, RISC-V, MySQL, JavaScript, Java, Swift<br>
-            PHP, HTML, Latex, WordPress</p>
+#resume {
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
 
-            <h3>GitHub Link</h3>
-            <p><a href="https://github.com/SupporttTheEnd" target="_blank">https://github.com/SupporttTheEnd</a></p>
+#resume h2 {
+    border-bottom: 2px solid #4CAF50; /* Green border for h2 */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #333; /* Dark text color for headings */
+}
 
-            <h3>Service and Leadership</h3>
-            <p><strong>Undergraduate Student Representative:</strong> Promotion Review Committee for Dr. Yaakov Malinovsky, UMBC, Fall 2023<br>
-            - Surveyed and represented student perspectives in the promotion review process.<br>
-            - Collected responses and wrote a letter of evaluation.<br>
-            - Gave a talk on observations at the promotion meeting.</p>
+#resume h3 {
+    margin-top: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    color: #4CAF50; /* Green color for h3 */
+}
 
-            <h3>Activities</h3>
-            <p>2020-2021: National Math Honor Society 1st Place<br>
-            2021-2023: National Chinese Honor Society President<br>
-            2022-2023: CyberDawgs Cybersecurity Club Member, UMBC<br>
-            2023-2024: HackUMBC participant</p>
+#resume p {
+    margin-bottom: 0.5rem;
+}
 
-            <h3>Select Projects (More on GitHub)</h3>
-            <p><strong>IPC Kernel Project (Spring 2024):</strong><br>
-            - Extended the Linux kernel with a BST-based data structure for message queuing.<br>
-            - Implemented system calls to manage queues and explored concurrency challenges.</p>
+#resume a {
+    color: #1a0dab; /* Blue color for links */
+    text-decoration: none;
+}
 
-            <p><strong>Linux Shell Development (Spring 2024):</strong><br>
-            - Created a simulated Linux shell with commands like ls, pwd, proc, exit, and history.<br>
-            - Developed core functionalities and validated them through unit testing.</p>
+#resume a:hover {
+    text-decoration: underline;
+}
 
-            <h3>Achievements</h3>
-            <p>AP Scholar with Distinction (2021)<br>
-            Mu Alpha Theta (2022)<br>
-            Delegate Scholarship (2022)<br>
-            UMBC Dean’s List (2022 Fall)<br>
-            UMBC President’s List (2022 Fall)<br>
-            UMBC Dean’s List (2023 Spring)</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 My First Website</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
