@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const ball = document.getElementById("ball");
     let isDragging = false;
-    let isGravityActive = false;
+    let isGravityActive = true;
     let offsetX, offsetY;
     let gravity = 0.5;
     let velocityY = 0;
