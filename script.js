@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ball.addEventListener("mousedown", function(event) {
         isDragging = true;
         isGravityActive = false;
-        offsetX = event.clientX - ball.getBoundingClientRect().left;
-        offsetY = event.clientY - ball.getBoundingClientRect().top;
+        offsetX = event.clientX - ball.getBoundingClientRect().left - window.scrollX;
+        offsetY = event.clientY - ball.getBoundingClientRect().top - window.scrollY;
+
     });
 
     document.addEventListener("mouseup", function() {
