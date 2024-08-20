@@ -2,55 +2,57 @@
 document.addEventListener("DOMContentLoaded", function() {
     const ball = document.getElementById("ball");
     let isDragging = false;
+    let isGravityActive = false;
     let offsetX, offsetY;
-    let gravity = 0.5; // Gravity force
-    let velocityY = 0; // Initial vertical velocity
-    let ballX, ballY;
+    let gravity = 0.5;
+    let velocityY = 0;
 
-    // Set initial position of the ball
     ball.style.left = "100px";
     ball.style.top = "100px";
 
-    // Event listener for mouse movement
     document.addEventListener("mousemove", function(event) {
         if (isDragging) {
-            // Update ball position during drag
             ball.style.left = (event.clientX - offsetX) + "px";
             ball.style.top = (event.clientY - offsetY) + "px";
         }
     });
 
-    // Event listener for mouse down (start dragging)
     ball.addEventListener("mousedown", function(event) {
         isDragging = true;
+        isGravityActive = false;
         offsetX = event.clientX - ball.getBoundingClientRect().left;
         offsetY = event.clientY - ball.getBoundingClientRect().top;
     });
 
-    // Event listener for mouse up (stop dragging)
     document.addEventListener("mouseup", function() {
         isDragging = false;
+        isGravityActive = true;
     });
 
-    // Function to apply gravity and update ball position
+    ball.addEventListener("click", function() {
+        isGravityActive = true;
+    });
+
     function applyGravity() {
-        if (!isDragging) {
-            // Update vertical velocity due to gravity
+        if (!isDragging && isGravityActive) {
+            const ballRect = ball.getBoundingClientRect();
+            const footerRect = document.querySelector("footer").getBoundingClientRect();
+
             velocityY += gravity;
+            let ballTop = parseFloat(ball.style.top) || 0;
+            ballTop += velocityY;
 
-            // Update ball position based on velocity
-            ballY = parseFloat(ball.style.top) || 0;
-            ball.style.top = (ballY + velocityY) + "px";
-
-            // Bounce if hitting the bottom of the viewport
-            if (ballY + velocityY + ball.clientHeight > window.innerHeight) {
-                velocityY *= -0.7; // Reverse and reduce velocity (bounce effect)
-                ball.style.top = (window.innerHeight - ball.clientHeight) + "px";
+            if (ballTop + ballRect.height > footerRect.top) {
+                velocityY *= -0.7;
+                ballTop = footerRect.top - ballRect.height;
+                if (Math.abs(velocityY) < 0.1) {
+                    velocityY = 0;
+                }
             }
+
+            ball.style.top = ballTop + "px";
         }
     }
 
-    // Continuously apply gravity
-    setInterval(applyGravity, 16); // ~60 FPS
-
+    setInterval(applyGravity, 16);
 });
