@@ -68,3 +68,12 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#ball {
+    position: absolute; /* Allows the ball to move around the page */
+    width: 50px; /* Size of the ball */
+    height: 50px; /* Size of the ball */
+    background-color: red; /* Color of the ball */
+    border-radius: 50%; /* Makes the ball round */
+    pointer-events: none; /* Prevents the ball from interfering with mouse events */
+}
