@@ -1,23 +1,48 @@
-/* Existing styles... */
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50; /* Green background for header */
+    color: #fff; /* White text color */
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
 
 #resume {
     background: #fff;
-    padding: 1rem;
+    padding: 2rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 1rem 0;
 }
 
 #resume h2 {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #4CAF50; /* Green border for h2 */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    color: #333; /* Dark text color for headings */
 }
 
 #resume h3 {
     margin-top: 1rem;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.5rem;
+    color: #4CAF50; /* Green color for h3 */
 }
 
 #resume p {
@@ -25,7 +50,20 @@
 }
 
 #resume a {
-    color: #1a0dab;
+    color: #1a0dab; /* Blue color for links */
     text-decoration: none;
 }
 
+#resume a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
