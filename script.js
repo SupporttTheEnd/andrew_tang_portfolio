@@ -142,3 +142,27 @@ window.addEventListener("scroll", function() {
     // Update the width of the slider
     slider.style.width = Math.min(scrollPercent, 100) + '%'; // Cap at 100%
 });
+
+// Function to handle element visibility
+function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add 'visible' class and appropriate side class for animation
+            const element = entry.target;
+            element.classList.add('visible');
+            observer.unobserve(element); // Stop observing the element once it's visible
+        }
+    });
+}
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+});
+
+// Observe all elements with the class 'animate'
+document.querySelectorAll('.animate').forEach(element => {
+    observer.observe(element);
+});

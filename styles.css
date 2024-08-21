@@ -12,6 +12,7 @@ body {
     background-size: cover; /* Resize the background image to cover the entire element */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the image within the element */
+    overflow-x: hidden;
 }
 
 header {
@@ -99,21 +100,6 @@ footer {
     z-index: 1000;
 }
 
-#ball.java{
-    position: absolute;
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
-    border-radius: 5%; /* Makes it round */
-    border: 3px solid rgb(0, 0, 0);
-    cursor: pointer; /* This will show a hand cursor */
-    left: 50px;
-    background-image: url('javascript.png'); /* URL of the background image */
-    background-size: cover; /* Resize the background image to cover the entire element */
-    background-position: top center; 
-    /* Ensure the ball is visible and clickable */
-    z-index: 1000;
-}
-
 nav {
     background-color: #001b656d;
     width: 100;
@@ -194,6 +180,22 @@ button:hover {
     display: inline-block; /* Ensures the section wraps around the content */
 }
 
+
+#ball.java{
+    position: absolute;
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border-radius: 5%; /* Makes it round */
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer; /* This will show a hand cursor */
+    left: 50px;
+    background-image: url('javascript.png'); /* URL of the background image */
+    background-size: cover; /* Resize the background image to cover the entire element */
+    background-position: top center; 
+    /* Ensure the ball is visible and clickable */
+    z-index: 1000;
+}
+
 .game-content {
     display: flex;
     background-color: rgba(220, 220, 220, 0.514);
@@ -240,4 +242,29 @@ iframe {
 .reset-button:hover {
     background-color: #0056b3; /* Darker blue on hover */
     transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/*============================================= Adding animation ===================================================*/
+
+.animate {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateX(0);
+}
+.animate.visible {
+    opacity: 1;
+}
+.animate.left {
+    transform: translateX(-20px);
+    transition-delay: 0.5s; /* Delay for animation */
+}
+.animate.right {
+    transform: translateX(20px);
+    transition-delay: 0.5s; /* Delay for animation */
+}
+.animate.visible.left {
+    transform: translateX(0);
+}
+.animate.visible.right {
+    transform: translateX(0);
 }
