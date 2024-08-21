@@ -1,3 +1,5 @@
+/*============================================= For index Games ===================================================*/
+
 /* Reset some default styles */
 body, h1, h2, h3, p {
     margin: 0;
@@ -69,14 +71,17 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Footer styling */
 footer {
-    background-color: #001b65d8; /* Dark grey background for footer */
+    background-color: #001b65d8; /* Dark blue background for footer */
     color: #fff; /* White text color */
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: fixed; /* Fixes the footer to the bottom of the viewport */
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Ensures the footer spans the full width */
+    z-index: 1000; /* Ensures the footer appears above other content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for better separation */
 }
 
 #ball {
@@ -88,6 +93,21 @@ footer {
     cursor: pointer; /* This will show a hand cursor */
     left: 50px;
     background-image: url('umbc_logo.jpg'); /* URL of the background image */
+    background-size: cover; /* Resize the background image to cover the entire element */
+    background-position: top center; 
+    /* Ensure the ball is visible and clickable */
+    z-index: 1000;
+}
+
+#ball.java{
+    position: absolute;
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border-radius: 5%; /* Makes it round */
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer; /* This will show a hand cursor */
+    left: 50px;
+    background-image: url('javascript.png'); /* URL of the background image */
     background-size: cover; /* Resize the background image to cover the entire element */
     background-position: top center; 
     /* Ensure the ball is visible and clickable */
@@ -119,6 +139,47 @@ button:hover {
     transform: scale(1.05); /* Slightly enlarge the button on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
+
+/* Footer bar styling */
+.footer-bar {
+    position: absolute; /* Position the bar absolutely within the footer */
+    top: 0; /* Align it to the top of the footer */
+    left: 0; /* Align it to the left edge of the footer */
+    height: 10px; /* Adjust the height of the bar */
+    width: 100%; /* Start with width 0%, will expand dynamically */
+    background-color: #80a2ffd8; /* Dark color for the bar */
+    transition: width 0.3s ease; /* Smooth transition for the bar width */
+}
+
+/* Footer bar styling */
+.footer-slider {
+    position: absolute; /* Position the bar absolutely within the footer */
+    top: 0; /* Align it to the top of the footer */
+    left: 0; /* Align it to the left edge of the footer */
+    height: 10px; /* Adjust the height of the bar */
+    width: 0%; /* Start with width 0%, will expand dynamically */
+    background-color: #0131b4d8; /* Dark color for the bar */
+    transition: width 0.3s ease; /* Smooth transition for the bar width */
+}
+
+.gravity-button {
+    height: 3em; 
+    width: 10em; 
+    position: fixed; /* Fixes the button's position relative to the viewport */
+    top: 10px; /* Distance from the top of the viewport */
+    right: 15px; /* Distance from the right of the viewport */
+    background-color: #156c15; /* Green background */
+    color: white;
+    border: 2px solid black; /* Adjust border width */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em; /* Adjusted font size to fit text */
+    text-align: center; /* Center text horizontally */
+    overflow: hidden; /* Ensure text doesn't overflow */
+    z-index: 1; /* Ensures the button is above other content */
+}
+
 
 /*============================================= For j-s Games ===================================================*/
 

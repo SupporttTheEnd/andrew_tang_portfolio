@@ -6,20 +6,6 @@
     <title>JS Games - Andrew Tang</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="icon.png" type="image/png">
-    <style>
-        .reset-button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .reset-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -31,6 +17,8 @@
         <button onclick="location.href='js-games.html'">JS Games</button>
     </nav>
     <main>
+        <div id="ball" class = "java"></div>
+        <button class="gravity-button" onclick="toggleGravity()">Reverse Gravity</button>
         <section id="games">
             <h2>My JavaScript Games</h2>
             <article class="game">
@@ -89,14 +77,10 @@
         </section>
     </main>
     <footer>
+        <div class="footer-bar"></div>
+        <div class="footer-slider"></div>
         <p>&copy; andrew73@umbc.edu</p>
     </footer>
-    <script>
-        function resetGame(iframeId, url) {
-            var iframe = document.getElementById(iframeId);
-            iframe.src = '';
-            iframe.src = url;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
