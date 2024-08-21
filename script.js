@@ -120,9 +120,6 @@ function toggleGravity() {
     } else {
         button.style.backgroundColor = '#156c15'; // Green for downward gravity
     }
-    
-    // Toggle the gravity direction flag
-    isGravityDown = !isGravityDown;
 }
 
 setInterval(applyGravity, 16);
