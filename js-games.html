@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Games - Andrew Tang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        .reset-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .reset-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="java.jpeg" alt="Icon" class="header-icon">
+        <h1>JavaScript Games</h1>
+    </header>
+    <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='js-games.html'">JS Games</button>
+    </nav>
+    <main>
+        <section id="games">
+            <h2>My JavaScript Games</h2>
+            <article class="game">
+                <h3>Robot Defender</h3>
+                <p>This game was created as my final project for AP Computer Science at Catonsville High School. It was one of the final games I made in JavaScript before I moved onto C++ for game development.</p>
+                <div class="game-content">
+                    <div class="iframe-container">
+                        <iframe id="game1" src="https://studio.code.org/projects/gamelab/X8ONLsAg4dqGiiwLt6o2Gb7VBZc_UScx5G50yG0ICUH/embed?nosource"></iframe>
+                    </div>
+                    <div class="game-instructions">
+                        <button class="reset-button" onclick="resetGame('game1', 'https://studio.code.org/projects/gamelab/X8ONLsAg4dqGiiwLt6o2Gb7VBZc_UScx5G50yG0ICUH/embed?nosource')">Reset Game</button>
+                        <h4>Controls:</h4>
+                        <p><strong>WASD:</strong> Move your character in four directions: W to move up, A to move left, S to move down, and D to move right.</p>
+                        <p><strong>Spacebar:</strong> Press to shoot and fend off enemies.</p>
+                        <p><strong>Objective:</strong> Defend the city from waves of alien invaders. Use your movement and shooting skills to stay alive as long as possible and score high by defeating the most enemies. There is also a boss that comes mid-way through the game that pushes away your barriers and shoots back at you. Win the game by reaching a score of 2500 or more.</p>
+                    </div>
+                </div>
+            </article>      
+            <article class="game">
+                <h3>City Defender</h3>
+                <p>This game, "City Defender," was developed as a personal project over the summer of 2020. It represents one of my earlier JavaScript projects before I transitioned to C++ for game development. The game involves defending a city from various alien threats and requires strategic shooting and movement.</p>
+                <div class="game-content">
+                    <div class="iframe-container">
+                        <iframe id="game2" src="https://studio.code.org/projects/gamelab/Veb9ZUbAYXAEK526Gm2nnHCu6GxO-rqAMM3xvoclQOM/embed"></iframe>
+                    </div>
+                    <div class="game-instructions">
+                        <button class="reset-button" onclick="resetGame('game2', 'https://studio.code.org/projects/gamelab/Veb9ZUbAYXAEK526Gm2nnHCu6GxO-rqAMM3xvoclQOM/embed')">Reset Game</button>
+                        <h4>Controls:</h4>
+                        <p><strong>Arrow Keys:</strong> Move your tank left and right.</p>
+                        <p><strong>'S' key:</strong> Shoot bullets to eliminate enemies.</p>
+                        <h4>Objective:</h4>
+                        <p>Protect the city from waves of alien invaders. Use your tank to shoot enemies and avoid taking damage. There are various enemy types, including drones, aliens, and a mothership that appears later in the game. Survive and achieve a high score to win. Reach a score above 3000 to unlock the victory screen.</p>
+                    </div>
+                </div>
+            </article>    
+            <article class="game">
+                <h3>Road Racer</h3>
+                <p>This was one of the first games that I made in JavaScript in my first CS class in HighSchool, this is what got me to fall in love with the field. </p>
+                <div class="game-content">
+                    <div class="iframe-container">
+                        <iframe id="game3" src="https://studio.code.org/projects/gamelab/CDWlzSC1L8xPqQPA0c2iqUXtcIszEn0HBAItVxfa7Lw/embed"></iframe>
+                    </div>    
+                    <div class="game-instructions">
+                        <button class="reset-button" onclick="resetGame('game3', 'https://studio.code.org/projects/gamelab/CDWlzSC1L8xPqQPA0c2iqUXtcIszEn0HBAItVxfa7Lw/embed')">Reset Game</button>
+                        <h4>Controls:</h4>
+                        <p><strong>W:</strong> Move your cycle up.</p>
+                        <p><strong>A:</strong> Move your cycle left.</p>
+                        <p><strong>S:</strong> Move your cycle down.</p>
+                        <p><strong>D:</strong> Move your cycle right.</p>
+                        <p><strong>Arrow Keys:</strong> Move the second cycle.</p>
+                        <h4>Objective:</h4>
+                        <p>Navigate through traffic while avoiding collisions with various cars and obstacles. Collect points by successfully maneuvering through the road and avoid getting hit by the vehicles. Survive as long as you can and aim for a high score!</p>
+                    </div>
+                </div>
+            </article>                       
+        </section>
+    </main>
+    <footer>
+        <p>&copy; andrew73@umbc.edu</p>
+    </footer>
+    <script>
+        function resetGame(iframeId, url) {
+            var iframe = document.getElementById(iframeId);
+            iframe.src = '';
+            iframe.src = url;
+        }
+    </script>
+</body>
+</html>

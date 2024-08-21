@@ -13,10 +13,18 @@ body {
 }
 
 header {
-    background-color: #4a4a4a; /* Dark grey background for header */
+    display: flex;
+    background-color: #010c24; /* Dark grey background for header */
     color: #fff; /* White text color */
     padding: 1rem;
     text-align: left;
+}
+
+.header-icon {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px; /* Space between the icon and header text */
+    border-radius: 20px;
 }
 
 main {
@@ -34,35 +42,35 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
 }
 
-#resume h2 {
+h2 {
     border-bottom: 2px solid #9e9e9e; /* Grey border for h2 */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     color: #333; /* Dark text color for headings */
 }
 
-#resume h3 {
+h3 {
     margin-top: 1rem;
     border-bottom: 1px solid #ddd; /* Light grey border for h3 */
     padding-bottom: 0.5rem;
     color: #555; /* Medium grey color for h3 */
 }
 
-#resume p {
+p {
     margin-bottom: 0.5rem;
 }
 
-#resume a {
+a {
     color: #007bff; /* Light blue color for links */
     text-decoration: none;
 }
 
-#resume a:hover {
+a:hover {
     text-decoration: underline;
 }
 
 footer {
-    background-color: #4a4a4a; /* Dark grey background for footer */
+    background-color: #001b65d8; /* Dark grey background for footer */
     color: #fff; /* White text color */
     text-align: center;
     padding: 1rem;
@@ -76,6 +84,7 @@ footer {
     width: 50px; /* Adjust as needed */
     height: 50px; /* Adjust as needed */
     border-radius: 50%; /* Makes it round */
+    border: 3px solid rgb(0, 0, 0);
     cursor: pointer; /* This will show a hand cursor */
     left: 50px;
     background-image: url('umbc_logo.jpg'); /* URL of the background image */
@@ -83,4 +92,91 @@ footer {
     background-position: top center; 
     /* Ensure the ball is visible and clickable */
     z-index: 1000;
+}
+
+nav {
+    background-color: #001b656d;
+    width: 100;
+}
+
+/* Style the buttons */
+button {
+    display: inline-block;
+    padding: 10px 15px; /* Increase button size */
+    font-size: 13px; /* Larger font size */
+    font-weight: bold;
+    color: #fff; /* White text color */
+    background-color: #001b6500; /* Blue background color */
+    border: none; /* Remove default border */
+    border-radius: 2px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #000f36bb; /* Darker blue background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/*============================================= For j-s Games ===================================================*/
+
+#games {
+    height: 100%;
+    background: #fff; /* White background for resume section */
+    padding: 2rem;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+    display: inline-block; /* Ensures the section wraps around the content */
+}
+
+.game-content {
+    display: flex;
+    background-color: rgba(220, 220, 220, 0.514);
+}
+
+.iframe-container {
+    flex: 3.62; 
+    float: right;
+    width: 402px; /* Width of the visible area */
+    height: 450px; /* Height of the visible area */
+    overflow: hidden; /* Hides the content that overflows */
+    position: relative; /* Ensures proper positioning */
+    border: 1px solid #ddd; /* Optional: adds a border around the container */
+    margin-right: 20px;
+}
+
+iframe {
+    width: 600px; /* Width of the iframe larger than the container */
+    height: 100%; /* The height of the iframe */
+    position: absolute; /* Positioning the iframe absolutely */
+    left: -22px; /* Adjust this value to move the iframe leftward */
+    top: 0; /* Aligns the iframe to the top of the container */
+}
+
+.game-instructions {
+    flex: 3; 
+}
+
+.reset-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Make font bold */
+    text-align: center;
+    display: inline-block; /* Align buttons nicely */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and scale */
+}
+
+.reset-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
 }
