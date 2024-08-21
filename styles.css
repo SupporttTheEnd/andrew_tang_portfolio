@@ -6,15 +6,17 @@ body, h1, h2, h3, p {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #c8c2c2; /* Light grey background */
-    color: #333; /* Dark text color */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('umbc.jpg'); /* Dark gradient overlay */
+    background-size: cover; /* Resize the background image to cover the entire element */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image within the element */
 }
 
 header {
     background-color: #4a4a4a; /* Dark grey background for header */
     color: #fff; /* White text color */
     padding: 1rem;
-    text-align: center;
+    text-align: left;
 }
 
 main {
@@ -73,9 +75,12 @@ footer {
     position: absolute;
     width: 50px; /* Adjust as needed */
     height: 50px; /* Adjust as needed */
-    background-color: red; /* Adjust color as needed */
     border-radius: 50%; /* Makes it round */
     cursor: pointer; /* This will show a hand cursor */
+    left: 50px;
+    background-image: url('umbc_logo.jpg'); /* URL of the background image */
+    background-size: cover; /* Resize the background image to cover the entire element */
+    background-position: top center; 
     /* Ensure the ball is visible and clickable */
     z-index: 1000;
 }
