@@ -166,3 +166,31 @@ const observer = new IntersectionObserver(handleIntersection, {
 document.querySelectorAll('.animate').forEach(element => {
     observer.observe(element);
 });
+
+function activateArt(element) {
+    // Get the viewport's center position
+    const viewportCenterX = window.innerWidth / 2;
+    const viewportCenterY = window.innerHeight / 2;
+
+    // Get the element's bounding rectangle
+    const rect = element.getBoundingClientRect();
+    
+    // Calculate the offset needed to center the element
+    const translateX = viewportCenterX - (rect.left + rect.width / 2);
+    const translateY = viewportCenterY - (rect.top + rect.height / 2);
+
+    // Apply the translation to center the element
+    element.style.transform = `translate(${translateX}px, ${translateY}px) scale(2)`;
+}
+
+function resetArt(element) {
+    // Reset the transform to original state
+    element.style.transform = '';
+}
+
+// Attach event listeners to all elements with the class 'art-holder'
+document.querySelectorAll('.artwork').forEach(element => {
+    element.addEventListener('mousedown', () => activateArt(element));
+    element.addEventListener('mouseup', () => resetArt(element));
+    element.addEventListener('mouseleave', () => resetArt(element)); 
+});

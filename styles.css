@@ -8,7 +8,7 @@ body, h1, h2, h3, p {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('umbc.jpg'); /* Dark gradient overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url('umbc.jpg'); /* Dark gradient overlay */
     background-size: cover; /* Resize the background image to cover the entire element */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the image within the element */
@@ -133,7 +133,7 @@ button:hover {
     left: 0; /* Align it to the left edge of the footer */
     height: 10px; /* Adjust the height of the bar */
     width: 100%; /* Start with width 0%, will expand dynamically */
-    background-color: #80a2ffd8; /* Dark color for the bar */
+    background-color: #001b6500; /* Dark color for the bar */
     transition: width 0.3s ease; /* Smooth transition for the bar width */
 }
 
@@ -144,7 +144,7 @@ button:hover {
     left: 0; /* Align it to the left edge of the footer */
     height: 10px; /* Adjust the height of the bar */
     width: 0%; /* Start with width 0%, will expand dynamically */
-    background-color: #0131b4d8; /* Dark color for the bar */
+    background-color: #ff7c01d8; /* Dark color for the bar */
     transition: width 0.3s ease; /* Smooth transition for the bar width */
 }
 
@@ -163,9 +163,31 @@ button:hover {
     font-size: 0.9em; /* Adjusted font size to fit text */
     text-align: center; /* Center text horizontally */
     overflow: hidden; /* Ensure text doesn't overflow */
-    z-index: 1; /* Ensures the button is above other content */
+    z-index: 1000; /* Ensures the button is above other content */
 }
 
+.animate {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateX(0);
+}
+.animate.visible {
+    opacity: 1;
+}
+.animate.left {
+    transform: translateX(-20px);
+    transition-delay: 0.5s; /* Delay for animation */
+}
+.animate.right {
+    transform: translateX(20px);
+    transition-delay: 0.5s; /* Delay for animation */
+}
+.animate.visible.left {
+    transform: translateX(0);
+}
+.animate.visible.right {
+    transform: translateX(0);
+}
 
 /*============================================= For j-s Games ===================================================*/
 
@@ -244,27 +266,76 @@ iframe {
     transform: scale(1.05); /* Slightly enlarge the button */
 }
 
-/*============================================= Adding animation ===================================================*/
+/*============================================= For Artwork ===================================================*/
 
-.animate {
-    opacity: 0;
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    transform: translateX(0);
+#art {
+    position: relative;
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 350px);
+    justify-items: center;
+    gap: 30px; 
+    grid-auto-rows: 350px;
+    top: -30px; 
+    margin-bottom: 30px;
 }
-.animate.visible {
-    opacity: 1;
+
+#ball.art-ball{
+    position: absolute;
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border-radius: 25%; /* Makes it round */
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer; /* This will show a hand cursor */
+    left: 50px;
+    background-image: url('icon.png'); /* URL of the background image */
+    background-size: cover; /* Resize the background image to cover the entire element */
+    background-position: top center; 
+    /* Ensure the ball is visible and clickable */
+    z-index: 1000;
 }
-.animate.left {
-    transform: translateX(-20px);
-    transition-delay: 0.5s; /* Delay for animation */
+
+.art-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px; /* Adjust as needed to fit your layout */
+    position: relative; /* For positioning the label */
+    transition: transform 0.3s ease; /* Smooth transition for transform changes */
 }
-.animate.right {
-    transform: translateX(20px);
-    transition-delay: 0.5s; /* Delay for animation */
+
+.artwork {
+    border: 2px solid rgb(96, 96, 96);
+    z-index: 10;
+    align-self: center;
+    width: 100%; /* Takes up the full width of the art-holder */
+    height: calc(100% - 55px); /* Takes up the full height minus space for the label */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 5px; /* Slight rounding for the image corners */
+    transition: border-color 0; 
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
-.animate.visible.left {
-    transform: translateX(0);
+
+.artwork:hover {
+    transform: scale(1.02);
 }
-.animate.visible.right {
-    transform: translateX(0);
+
+.artwork:active {
+    object-fit: contain; /* Shows the whole image when active */
+    border-color: rgb(0,0,0,0);
+    z-index: 100;
+}
+
+.art-holder p {
+    margin: 4px 0 0; /* Space between the image and the subtext */
+    color: #333; /* Text color */
+    font-size: 1em; /* Font size for the subtext */
+    font-weight: bold;
+    text-align: center;
+    position: absolute; /* Position the label at the bottom */
+    bottom: 0; /* Stick to the bottom of the art-holder */
+    width: 100%; /* Full width of the art-holder */
+    padding: 5px; /* Padding for the label */
 }
