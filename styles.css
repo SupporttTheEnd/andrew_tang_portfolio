@@ -7,11 +7,16 @@ body, h1, h2, h3, p {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url('umbc.jpg'); 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center; 
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.132), rgba(0, 0, 0, 0.79)), /* Gradient overlay */
+        url('umbc.jpg'), 
+        black; /* Background image */
+    background-size: cover; /* Ensures both the image and gradient cover the entire element */
+    background-position: center; /* Centers both the image and gradient */
+    background-attachment: fixed; /* Keeps the image fixed */
+    background-repeat: no-repeat; /* Prevents repeating the image */
     overflow-x: hidden;
+    position: relative; 
 }
 
 header {
@@ -42,6 +47,8 @@ main {
     border-radius: 8px;
     margin: 1rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: relative;
+    transition: transform 0.3s ease-out; /* Smooth transition */
 }
 
 h2 {
@@ -187,18 +194,6 @@ button:hover {
 }
 
 /*============================================= For j-s Games ===================================================*/
-
-#games {
-    height: 100%;
-    background: #fff; 
-    padding: 2rem;
-    border: 1px solid #ddd; 
-    border-radius: 8px;
-    margin: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    display: inline-block; 
-}
-
 #ball.java {
     position: absolute;
     width: 50px; 
