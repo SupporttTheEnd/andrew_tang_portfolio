@@ -8,7 +8,6 @@ body, h1, h2, h3, p {
 body {
     font-family: Arial, sans-serif;
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.132), rgba(0, 0, 0, 0.79)), /* Gradient overlay */
         url('umbc.jpg'), 
         black; /* Background image */
     background-size: cover; /* Ensures both the image and gradient cover the entire element */

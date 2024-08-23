@@ -197,6 +197,6 @@ document.querySelectorAll('.artwork').forEach(element => {
 
 document.addEventListener('scroll', function() {
     const scrollTop = window.scrollY;
-    const speed = 0.2; // Adjust this value to control the speed of the background movement
+    const speed = 0.15; // Adjust this value to control the speed of the background movement
     document.body.style.backgroundPosition = `center ${-scrollTop * speed}px`;
 });
